@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BikeFinder - Discover Your Ride</title>
+    <style>
+        /* Basic reset and styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body, html {
+            background-color: #f8f9fa;
+            color: #1f2833;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1f2833, #66fcf1);
+            color: #ffffff;
+            text-align: center;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            font-weight: 300;
+            color: #c5c6c7;
+            margin-bottom: 20px;
+        }
+
+        /* Button */
+        .cta-button {
+            background-color: #45a29e;
+            color: #ffffff;
+            font-size: 18px;
+            padding: 12px 30px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background-color: #66fcf1;
+        }
+
+        /* Bike Gallery */
+        .bike-gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 60px 20px;
+            background-color: #f8f9fa;
+        }
+
+        .bike {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bike img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .bike:hover img {
+            transform: scale(1.1);
+        }
+
+        .bike:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Text Overlay */
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 22px;
+            font-weight: 600;
+            color: #1f2833;
+            text-align: center;
+            background: rgba(102, 252, 241, 0.7);
+            padding: 15px 25px;
+            border-radius: 8px;
+        }
+
+        /* Information Section */
+        .info-section {
+            background: linear-gradient(135deg, #c5c6c7, #66fcf1);
+            color: #1f2833;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .info-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .info-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1f2833;
+            color: #c5c6c7;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #66fcf1;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Find the Perfect Bike</h1>
+        <p>Your journey begins here – explore the road, conquer the trails.</p>
+        <a href="#bike-gallery" class="cta-button">Discover Now</a>
+    </div>
+
+    <!-- Bike Gallery -->
+    <div id="bike-gallery" class="bike-gallery">
+        <div class="bike">
+            <img src="static/bike1.jpg" alt="Mountain Bike X1">
+            <div class="overlay-text">Mountain Bike X1 - $799</div>
+        </div>
+        <div class="bike">
+            <img src="static/bike2.jpg" alt="Road Bike Z9">
+            <div class="overlay-text">Road Bike Z9 - $1,299</div>
+        </div>
+        <div class="bike">
+            <img src="static/bike3.jpg" alt="Hybrid Bike S5">
+            <div class="overlay-text">Hybrid Bike S5 - $999</div>
+        </div>
+        <div class="bike">
+            <img src="static/bike4.jpg" alt="Adventure Bike A1">
+            <div class="overlay-text">Adventure Bike A1 - $1,199</div>
+        </div>
+    </div>
+
+    <!-- Information Section -->
+    <div class="info-section">
+        <h2>Why Choose Ride Estimator?</h2>
+        <p>
+            At Ride Estimator, we’re passionate about helping you find the bike that matches your style and needs. With an extensive range, 
+            from city-friendly hybrids to rugged mountain bikes, we make it easy to find your ideal ride.
+        </p>
+        <p>
+            Our user-friendly platform, expert advice, and real-time bike comparisons ensure that your next adventure is just a click away.
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Ride Estimator | <a href="/privacy-policy">Privacy Policy</a></p>
+    </div>
+
+</body>
+</html>

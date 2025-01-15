@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Bike Price Estimation Project</title>
+  <style>
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #1a1a2e;
+      color: #e0e0e0;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to right, #0f3460, #16213e);
+      color: #e0e0e0;
+      text-align: center;
+      padding: 60px 20px;
+      animation: fadeIn 2s ease-out;
+    }
+    .hero h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
+    }
+
+    /* Overview Section */
+    .overview {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #16213e;
+      color: #f0f0f0;
+      animation: slideInLeft 1s ease-out;
+    }
+    .overview h2 {
+      margin-bottom: 20px;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 40px 20px;
+      background-color: #0f3460;
+      text-align: center;
+      color: #f0f0f0;
+      animation: slideInRight 1s ease-out;
+    }
+    .features h2 {
+      margin-bottom: 20px;
+    }
+    .feature-list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .feature-item {
+      width: 30%;
+      margin: 10px;
+      padding: 20px;
+      background: #e0e0e0;
+      color: #1a1a2e;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      animation: slideInUp 1s ease-out;
+    }
+    .feature-item:hover {
+      transform: scale(1.05);
+    }
+
+    /* Benefits Section */
+    .benefits {
+      padding: 40px 20px;
+      background-color: #1a1a2e;
+      text-align: center;
+      color: #e0e0e0;
+      animation: slideInLeft 1s ease-out;
+    }
+    .benefit-list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .benefit-item {
+      width: 30%;
+      padding: 20px;
+      margin: 10px;
+      background: #e0e0e0;
+      color: #1a1a2e;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      animation: slideInRight 1s ease-out;
+    }
+    .benefit-item:hover {
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    footer {
+      background: #0f3460;
+      color: #e0e0e0;
+      text-align: center;
+      padding: 20px;
+    }
+    .scroll-top {
+      background: #16213e;
+      color: #e0e0e0;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+    .scroll-top:hover {
+      background: #1a1a2e;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideInLeft {
+      from { transform: translateX(-100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideInRight {
+      from { transform: translateX(100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideInUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Predicting Bike Prices with Precision</h1>
+    <p>A data-driven approach to accurately estimate bike prices for enthusiasts and sellers alike.</p>
+  </section>
+
+  <!-- Project Overview -->
+  <section class="overview">
+    <h2>About Our Project</h2>
+    <p>Our Ride Estimator project combines data analysis and machine learning to help users make smarter buying and selling decisions.</p>
+    <p>Whether you're a buyer, seller, or an enthusiast, this tool provides real-time insights into market trends, enabling confident decisions.</p>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h2>Key Features</h2>
+    <div class="feature-list">
+      <div class="feature-item">
+        <h3>Data-Driven Insights</h3>
+        <p>Gain predictions based on real-world data, considering critical factors like mileage, make, and model.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Ease of Use</h3>
+        <p>Enter bike details and receive instant, reliable price estimates in an intuitive, easy-to-navigate interface.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Market Trends Analysis</h3>
+        <p>Stay updated with recent trends to make well-informed buying or selling choices.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits">
+    <h2>Why Use Our Model?</h2>
+    <div class="benefit-list">
+      <div class="benefit-item">
+        <h3>For Buyers</h3>
+        <p>Discover the true market value and avoid overpaying, while planning your next purchase effectively.</p>
+      </div>
+      <div class="benefit-item">
+        <h3>For Sellers</h3>
+        <p>List bikes at competitive prices based on real-time market analysis and historical data.</p>
+      </div>
+      <div class="benefit-item">
+        <h3>For Enthusiasts</h3>
+        <p>Stay informed on market shifts and price trends, finding the best deals at the right time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Interested in learning more? Reach out to us and let's talk bikes!</p>
+    <button onclick="scrollToTop()" class="scroll-top">↑ Back to Top</button>
+  </footer>
+
+  <!-- JavaScript for Scroll-to-Top -->
+  <script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>

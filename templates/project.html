@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Price Prediction</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #283e51, #4b79a1);
+            color: #ecf0f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #ecf0f1;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            color: #34495e;
+            display: block;
+            margin-bottom: 5px;
+        }
+        select, input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #bdc3c7;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: #34495e;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        select:focus, input[type="number"]:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #2980b9;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        button:hover {
+            background-color: #3498db;
+            transform: scale(1.05);
+        }
+        .prediction-result {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #2c3e50;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        .result-value {
+            color: #2980b9;
+            font-size: 2.2rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Modern Bike Price Prediction</h1>
+    <h2>Find Your Bike’s Resale Value</h2>
+    
+    <form action="{{ url_for('predict') }}" method="post">
+        <div class="form-group">
+            <label for="brand">Select Brand</label>
+            <select name="brand_name" id="brand" required>
+                <option value="" disabled selected>Select Brand</option>
+                <option value="Royal Enfield">Royal Enfield</option>
+                <option value="KTM">KTM</option>
+                <option value="Bajaj">Bajaj</option>
+                <option value="Harley-Davidson">Harley-Davidson</option>
+                <option value="Yamaha">Yamaha</option>
+                <option value="Honda">Honda</option>
+                <option value="Suzuki">Suzuki</option>
+                <option value="TVS">TVS</option>
+                <option value="Kawasaki">Kawasaki</option>
+                <option value="Hyosung">Hyosung</option>
+                <option value="Benelli">Benelli</option>
+                <option value="Mahindra">Mahindra</option>
+                <option value="Triumph">Triumph</option>
+                <option value="Ducati">Ducati</option>
+                <option value="BMW">BMW</option>
+                <option value="Rajdoot">Rajdoot</option>
+                <option value="Indian">Indian</option>
+                <option value="LML">LML</option>
+                <option value="Yezdi">Yezdi</option>
+                <option value="MV">MV</option>
+                <option value="Ideal">Ideal</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="owner">Select Owner</label>
+            <select name="owner" id="owner" required>
+                <option value="" disabled selected>Select Owner</option>
+                <option value="1">First Owner</option>
+                <option value="2">Second Owner</option>
+                <option value="3">Third Owner</option>
+                <option value="4">Fourth Owner</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Bike Age (in years)</label>
+            <input type="number" id="age" name="age" placeholder="Enter bike age" min="0" required>
+        </div>
+
+        <div class="form-group">
+            <label for="power">Power (in HP)</label>
+            <input type="number" id="power" name="power" placeholder="Enter bike power" min="0" required>
+        </div>
+
+        <div class="form-group">
+            <label for="kms_driven">Kms Driven</label>
+            <input type="number" id="kms_driven" name="kms_driven" placeholder="Enter kilometers driven" min="0" required>
+        </div>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    {% if prediction %}
+    <div class="prediction-result">
+        <p>Estimated Bike Price:</p>
+        <p class="result-value">₹ {{ "%.2f" | format(prediction) }}</p>
+    </div>
+    {% endif %}
+
+</body>
+</html>
